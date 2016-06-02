@@ -1,0 +1,7 @@
+[package]
+name = "redirect"
+version = "0.1.0"
+authors = ["Rocky Meza <rockymeza@gmail.com>"]
+
+[dependencies]
+hyper = "0.9"
