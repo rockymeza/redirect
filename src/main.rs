@@ -1,5 +1,8 @@
 extern crate hyper;
 
+use std::str::FromStr;
+use std::net::IpAddr;
+
 use hyper::Url;
 use hyper::header::Location;
 use hyper::server::{Server, Request, Response};
@@ -9,9 +12,10 @@ use hyper::uri::RequestUri::AbsolutePath;
 
 fn main() {
     let new_host = Url::parse("http://example.com/").unwrap();
-    let server_url = "0.0.0.0:8000";
+    let ip = IpAddr::from_str("0.0.0.0").unwrap();
+    let port = 8000;
 
-    Server::http(server_url)
+    Server::http((ip, port))
         .unwrap()
         .handle(move |req: Request, mut res: Response| {
             let mut new_url = new_host.clone();
