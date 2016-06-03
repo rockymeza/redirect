@@ -4,4 +4,6 @@ version = "0.1.0"
 authors = ["Rocky Meza <rockymeza@gmail.com>"]
 
 [dependencies]
+ansi_term = "0.7"
+clap = "2"
 hyper = "0.9"
